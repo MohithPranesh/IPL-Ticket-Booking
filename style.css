@@ -1,0 +1,404 @@
+<style>
+/* =================================
+   IPL 2026 PREMIUM WEBSITE
+================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #080e1c;
+    color: #f5f7ff;
+    line-height: 1.7;
+}
+
+/* NAVIGATION */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(8, 14, 28, 0.95);
+    backdrop-filter: blur(15px);
+    padding: 20px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+nav h2 {
+    font-size: 27px;
+    font-weight: 900;
+    color: #ff9d24;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: #dce4f5;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff9d24;
+}
+
+/* HERO SECTION */
+
+#home {
+    min-height: 530px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 90px 20px;
+    background:
+        radial-gradient(circle at 50% 20%, #25477c 0%, transparent 50%),
+        linear-gradient(135deg, #101e3d, #080e1c 75%);
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #263957;
+}
+
+#home::before {
+    content: "IPL 2026";
+    position: absolute;
+    font-size: clamp(90px, 18vw, 200px);
+    font-weight: 900;
+    color: rgba(255,255,255,0.025);
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+#home h1 {
+    position: relative;
+    font-size: clamp(32px, 5vw, 58px);
+    font-weight: 900;
+    line-height: 1.2;
+    max-width: 900px;
+    margin-bottom: 22px;
+}
+
+#home p {
+    position: relative;
+    color: #bdc9dd;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+button {
+    background: linear-gradient(135deg, #ffb52e, #ff7200);
+    color: #101624;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 5px 20px rgba(255,145,0,0.2);
+}
+
+button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(255,145,0,0.4);
+}
+
+/* GENERAL SECTIONS */
+
+section {
+    padding: 75px 7%;
+}
+
+section h2 {
+    font-size: 30px;
+    font-weight: 800;
+    color: #ffad32;
+    margin-bottom: 28px;
+}
+
+section h3 {
+    color: #ffb52e;
+}
+
+/* ABOUT IPL */
+
+#about {
+    background: linear-gradient(180deg, #101b31, #0b1426);
+}
+
+#about p {
+    color: #c4cee0;
+    margin-bottom: 25px;
+}
+
+#about li {
+    margin-left: 25px;
+    padding: 5px;
+    color: #dce4f5;
+}
+
+#about ul {
+    margin-bottom: 25px;
+}
+
+/* MATCH SCHEDULE */
+
+#matches {
+    background: #0b1426;
+    overflow-x: auto;
+}
+
+#teamFilter {
+    background: #172642;
+    color: white;
+    border: 1px solid #435575;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px 0 20px;
+}
+
+#matches table,
+#mybookings table {
+    width: 100%;
+    min-width: 750px;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #121f37;
+}
+
+th {
+    background: linear-gradient(135deg, #ffad32, #ff7600);
+    color: #111827;
+    font-weight: 800;
+}
+
+th, td {
+    padding: 15px 12px;
+    text-align: center;
+    border-bottom: 1px solid #293953;
+}
+
+td {
+    color: #e1e8f5;
+}
+
+tr:nth-child(even) {
+    background: #182740;
+}
+
+tr:hover {
+    background: #263957;
+}
+
+#matches a {
+    color: #ffb52e;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+/* BOOKING SECTION */
+
+#booking {
+    background: linear-gradient(135deg, #111f39, #0a1222);
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 28px;
+    align-items: start;
+}
+
+#booking h2 {
+    grid-column: 1 / -1;
+}
+
+#booking form,
+#summary {
+    background: linear-gradient(145deg, #1a2b48, #111d32);
+    padding: 30px;
+    border: 1px solid #344663;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+#booking label {
+    display: block;
+    color: #e8edf8;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+#booking input,
+#booking select {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 15px;
+    background: #0b1528;
+    color: white;
+    border: 1px solid #3b506e;
+    border-radius: 8px;
+    outline: none;
+}
+
+#booking input:focus,
+#booking select:focus {
+    border-color: #ffad32;
+    box-shadow: 0 0 0 3px rgba(255,173,50,0.15);
+}
+
+#summary {
+    border-top: 4px solid #ffad32;
+}
+
+#summary h3 {
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+#summary p {
+    color: #d3dced;
+    padding: 10px 0;
+    border-bottom: 1px solid #344663;
+}
+
+#summary #totalAmount {
+    color: #ffb52e;
+    font-size: 28px;
+    font-weight: 900;
+}
+
+/* MY BOOKINGS */
+
+#mybookings {
+    background: #0b1426;
+    overflow-x: auto;
+}
+
+/* GUIDELINES */
+
+#guidelines {
+    background: linear-gradient(135deg, #111f39, #0a1222);
+}
+
+.guidelines-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.guideline-card {
+    background: linear-gradient(145deg, #1c2e4c, #111d32);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #344663;
+    border-top: 4px solid #ffad32;
+    transition: 0.3s;
+}
+
+.guideline-card:hover {
+    transform: translateY(-9px);
+    border-color: #ffad32;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.guideline-card h3 {
+    margin-bottom: 15px;
+    font-size: 19px;
+}
+
+.guideline-card p {
+    color: #c3cee0;
+}
+
+/* FOOTER */
+
+footer {
+    background: #050a14;
+    padding: 45px 20px;
+    text-align: center;
+    border-top: 1px solid #293953;
+}
+
+footer h3 {
+    color: #ffad32;
+    font-size: 23px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #aebbd0;
+    margin: 5px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 850px) {
+
+    nav {
+        justify-content: center;
+    }
+
+    #booking {
+        grid-template-columns: 1fr;
+    }
+
+    .guidelines-container {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 45px 5%;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    nav h2 {
+        font-size: 22px;
+    }
+
+    nav a {
+        margin: 5px;
+        font-size: 12px;
+    }
+
+    #home {
+        min-height: 400px;
+        padding: 60px 15px;
+    }
+
+    #home h1 {
+        font-size: 32px;
+    }
+
+    section h2 {
+        font-size: 24px;
+    }
+
+    #booking form,
+    #summary {
+        padding: 20px;
+    }
+
+}
+
+</style>
