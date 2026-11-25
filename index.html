@@ -794,6 +794,8 @@ function updateSummary() {
     document.getElementById("summaryQuantity").innerText = quantity;
 
     document.getElementById("totalAmount").innerText = price * quantity;
+
+    showToast("Booking Summary Updated!");
 }
 
 document.getElementById("selectedMatch").addEventListener("change", updateSummary);
