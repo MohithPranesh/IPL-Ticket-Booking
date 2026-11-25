@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Ticket Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="booking-page">
+
+    <nav class="booking-nav">
+        <h2>IPL 2026</h2>
+        <a href="index.html">Home</a>
+        <a href="index.html#matches">Matches</a>
+        <a href="booking.html">Book Ticket</a>
+    </nav>
+
+    <main class="booking-container">
+
+        <section class="booking-heading">
+            <h1>Book Your IPL Tickets</h1>
+            <p>Experience The Stadium Energy Live!</p>
+        </section>
+
+        <section class="booking-card">
+
+            <form action="#" method="get">
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name"
+                    placeholder="Enter your full name"
+                    minlength="3" maxlength="30" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email"
+                    placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone"
+                    placeholder="10 digit phone number"
+                    pattern="[0-9]{10}" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="match">Select Match</label>
+                    <select id="match" name="match" required>
+                        <option value="">Choose a match</option>
+                        <option>CSK vs MI</option>
+                        <option>RCB vs CSK</option>
+                        <option>MI vs RCB</option>
+                        <option>CSK vs SRH</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="stand">Stand Category</label>
+                    <select id="stand" name="stand" required>
+                        <option value="">Choose a stand</option>
+                        <option>General</option>
+                        <option>Premium</option>
+                        <option>VIP</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tickets">Number of Tickets</label>
+                    <input type="number" id="tickets" name="tickets"
+                    min="1" max="10"
+                    placeholder="Maximum 10 tickets" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Food Preference</label>
+                    <label>
+                        <input type="radio" name="food"
+                        value="Veg" required> Veg
+                    </label>
+
+                    <label>
+                        <input type="radio" name="food"
+                        value="Non-Veg"> Non-Veg
+                    </label>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit">Book Tickets</button>
+                    <button type="reset" class="reset-btn">Reset</button>
+                </div>
+
+            </form>
+
+        </section>
+    </main>
+
+    <footer class="booking-footer">
+        <p>&copy; 2026 IPL Ticket Booking. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
