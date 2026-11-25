@@ -38,3 +38,53 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
+
+
+// Hamburger Menu Toggle
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+if (menuToggle && navLinks) {
+    menuToggle.addEventListener("click", function () {
+        navLinks.classList.toggle("active");
+
+        const isOpen = navLinks.classList.contains("active");
+        menuToggle.setAttribute("aria-expanded", isOpen);
+    });
+}
+
+// Close menu after clicking a navigation link
+document.querySelectorAll(".nav-links a").forEach(function(link) {
+    link.addEventListener("click", function() {
+        navLinks.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+    });
+});
+
+// Filter Match Cards by Team
+function filterTeam() {
+    const selectedTeam = document.getElementById("teamFilter").value;
+    const matchCards = document.querySelectorAll(".match-card");
+
+    matchCards.forEach(card => {
+        const teams = card.dataset.teams;
+
+        if (selectedTeam === "all" || teams.includes(selectedTeam)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+
+
+function setMatchView(view) {
+    const matchGrid = document.querySelector(".match-grid");
+
+    if (view === "list") {
+        matchGrid.classList.add("list-view");
+    } else {
+        matchGrid.classList.remove("list-view");
+    }
+}

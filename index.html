@@ -427,8 +427,135 @@ footer p {
     opacity: 1;
     visibility: visible;
 }
+/* Hamburger Menu */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
 
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
 
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar {
+        position: relative;
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 15px;
+        padding: 15px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+/* Responsive Match Cards */
+.match-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.match-card {
+    background: #111b35;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #ff9800;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.match-card:hover {
+    transform: translateY(-8px);
+}
+
+.match-card h3 {
+    color: #ff9800;
+}
+
+.match-card h2 {
+    color: white;
+}
+
+.match-card p {
+    color: #ddd;
+}
+
+.match-prices {
+    margin: 20px 0;
+}
+
+.match-card .book-btn {
+    display: inline-block;
+    background: #ff9800;
+    color: #111;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Tablet */
+@media (max-width: 850px) {
+    .match-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+    .match-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Grid and List View Toggle */
+.view-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.view-toggle button {
+    padding: 10px 20px;
+    background: #ff9800;
+    color: #111;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.match-grid.list-view {
+    grid-template-columns: 1fr;
+}
+
+.match-grid.list-view .match-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 15px;
+}
 </style>
 </head>
 
@@ -437,15 +564,26 @@ footer p {
     
 
 
-    <nav>
-        <h2>IPL 2026</h2>
+    
+<nav class="navbar">
 
+    <h2>IPL 2026</h2>
+
+    <button class="menu-toggle" id="menuToggle"
+    type="button" aria-label="Toggle navigation"
+    aria-expanded="false">
+        ☰
+    </button>
+
+    <div class="nav-links" id="navLinks">
         <a href="#matches">Matches</a>
         <a href="booking.html">Book Ticket</a>
         <a href="#mybookings">My Bookings</a>
         <a href="#guidelines">Guidelines</a>
+    </div>
 
-    </nav>
+</nav>
+
 
 
 <section id="home">
@@ -513,9 +651,56 @@ footer p {
     <option value="SRH">Sunrisers Hyderabad</option>
 
 </select>
-
+<div class="view-toggle">
+    <button onclick="setMatchView('grid')">Grid View</button>
+    <button onclick="setMatchView('list')">List View</button>
+</div>
 
     <table border="1">
+<!-- RESPONSIVE MATCH CARDS -->
+<div class="match-grid">
+
+    <div class="match-card" data-teams="CSK MI">
+        <h3>Match 1</h3>
+        <h2>CSK vs MI</h2>
+        <p>📅 05-04-2026, 7:30 PM</p>
+        <p>📍 Chennai</p>
+        <div class="match-prices">
+            <p>General: ₹1000</p>
+            <p>Premium: ₹2500</p>
+            <p>VIP: ₹5000</p>
+        </div>
+        <a href="#booking" class="book-btn">Book Ticket</a>
+    </div>
+
+    <div class="match-card" data-teams="RCB KKR">
+        <h3>Match 2</h3>
+        <h2>RCB vs KKR</h2>
+        <p>📅 06-04-2026, 7:30 PM</p>
+        <p>📍 Bengaluru</p>
+        <div class="match-prices">
+            <p>General: ₹1200</p>
+            <p>Premium: ₹3000</p>
+            <p>VIP: ₹5500</p>
+        </div>
+        <a href="#booking" class="book-btn">Book Ticket</a>
+    </div>
+
+    <div class="match-card" data-teams="SRH CSK">
+        <h3>Match 3</h3>
+        <h2>SRH vs CSK</h2>
+        <p>📅 07-04-2026, 7:30 PM</p>
+        <p>📍 Hyderabad</p>
+        <div class="match-prices">
+            <p>General: ₹1000</p>
+            <p>Premium: ₹2000</p>
+            <p>VIP: ₹4500</p>
+        </div>
+        <a href="#booking" class="book-btn">Book Ticket</a>
+    </div>
+
+</div>
+
 
         <tr>
             <th>Match Number</th>
