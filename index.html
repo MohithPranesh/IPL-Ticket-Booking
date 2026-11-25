@@ -406,6 +406,29 @@ footer p {
 
 }
 
+/* Activity 5 - Toast Notification */
+
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #ffad32;
+    color: #080e1c;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 9999;
+}
+
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
 </style>
 </head>
 
@@ -513,7 +536,7 @@ footer p {
             <td>1000</td>
             <td>2500</td>
             <td>5000</td>
-            <td><a href="#booking">Book</a></td>
+            <td><a href="#booking" class="book-btn">Book</a></td>
         </tr>
 
         <tr>
@@ -524,7 +547,7 @@ footer p {
             <td>1200</td>
             <td>3000</td>
             <td>5500</td>
-            <td><a href="#booking">Book</a></td>
+            <td><a href="#booking" class="book-btn">Book</a></td>
         </tr>
 
         <tr>
@@ -535,7 +558,7 @@ footer p {
             <td>1000</td>
             <td>2000</td>
             <td>4500</td>
-            <td><a href="#booking">Book</a></td>
+            <td><a href="#booking" class="book-btn">Book</a></td>
         </tr>
 
     </table>
@@ -780,5 +803,7 @@ document.getElementById("standCategory").addEventListener("change", updateSummar
 document.getElementById("ticketQuantity").addEventListener("input", updateSummary);
 
 </script>
+<div id="toast" class="toast"></div>
+<script src="app.js"></script>
 </body>
 </html>

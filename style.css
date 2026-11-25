@@ -544,3 +544,33 @@ footer p {
         font-size: 25px;
     }
 }
+
+
+
+/* ACTIVITY 5 - TOAST NOTIFICATION */
+
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #f5c542;
+    color: #07152e;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 9999;
+}
+
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Smooth Scrolling */
+
+html {
+    scroll-behavior: smooth;
+}
